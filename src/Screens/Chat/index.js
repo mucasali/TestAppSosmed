@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {View, TouchableOpacity, Image, Text} from 'react-native';
+import {View, TouchableOpacity, Image, Text, TextInput} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import moment from 'moment';
 
@@ -41,11 +41,16 @@ class ChatScreen extends PureComponent {
       console.log('ChatScreen ', this.props);
 
       return (
-        <View style={Styles.container}>
-          <CustomFlatList
-            data={this.props.data.data}
-            renderItem={this.renderItem}
-          />
+        <View style={{flex: 1,}}>
+          {/* <View>
+            <TextInput />
+          </View> */}
+          <View style={Styles.container}>
+            <CustomFlatList
+              data={this.props.data.data}
+              renderItem={this.renderItem}
+            />
+          </View>
         </View>
       );
     } catch (err) {
@@ -60,6 +65,7 @@ ChatScreen.options = {
     title: {
       text: 'Chat',
     },
+    searchBar: true,
     rightButtons: [
       {
         id: 'menu',

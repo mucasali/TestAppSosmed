@@ -30,9 +30,9 @@ static void InitializeFlipper(UIApplication *application) {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
-
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-[ReactNativeNavigation bootstrapWithBridge:bridge];
+  [ReactNativeNavigation bootstrapWithDelegate:self launchOptions:launchOptions];
+//  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+//[ReactNativeNavigation bootstrapWithBridge:bridge];
   
 
   return YES;
