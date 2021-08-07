@@ -16,7 +16,7 @@ class HomeScreen extends PureComponent {
 
   navigationButtonPressed({buttonId}) {
     if (buttonId === 'sideMenu') {
-      Navigation.mergeOptions(this, {
+      Navigation.mergeOptions(this.props.componentId, {
         sideMenu: {
           left: {
             visible: true,

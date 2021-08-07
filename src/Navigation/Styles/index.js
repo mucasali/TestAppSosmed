@@ -88,6 +88,14 @@ const DefaultOptions = {
     selectedIconColor: Colors.primary, // Optional
     titleDisplayMode: 'alwaysShow', // Optional ('alwaysShow','showWhenActive','alwaysHide')
   },
+  sideMenu: {
+    left: {
+      width: 260,
+      height: 270,
+      visible: false,
+      enabled: true
+    },
+  },
   bottomTab: {
     fontFamily: Fonts.type.regular,
     textColor: Colors.greyText,
