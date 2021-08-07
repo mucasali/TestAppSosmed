@@ -1,4 +1,10 @@
 const images = {
+  iconTabHome: require('../Images/Icon_tabs/home.png'),
+  iconTabResidents: require('../Images/Icon_tabs/residents.png'),
+  iconTabEvent: require('../Images/Icon_tabs/event.png'),
+  iconTabSharing: require('../Images/Icon_tabs/sharing.png'),
+  iconTabServices: require('../Images/Icon_tabs/services.png'),
+
   iconSideMenu: require('../Images/Icons/icon-side-menu.png'),
   iconChat: require('../Images/Icons/icon-chat.png'),
   iconNotif: require('../Images/Icons/icon-notif.png'),

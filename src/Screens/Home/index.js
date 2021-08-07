@@ -1,11 +1,18 @@
 import React, {PureComponent} from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  SafeAreaView,
+} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import {CustomFlatList} from '../../Components';
+import {CustomFlatList, Header, Input} from '../../Components';
 import PostItem from '../Post/Item';
 import Styles from './Styles';
-import {Images} from '../../Themes';
+import {Images, Colors} from '../../Themes';
 import DUMMY_DATA from './DumyData.json';
 
 class HomeScreen extends PureComponent {
@@ -13,6 +20,14 @@ class HomeScreen extends PureComponent {
     super(props);
     Navigation.events().bindComponent(this);
   }
+
+  toChat = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'Chat.list',
+      },
+    });
+  };
 
   navigationButtonPressed({buttonId}) {
     if (buttonId === 'sideMenu') {
@@ -23,31 +38,54 @@ class HomeScreen extends PureComponent {
           },
         },
       });
-    } else if (buttonId === 'chat') {
-      Navigation.push(this.props.componentId, {
-        component: {
-          name: 'Chat.list',
-        },
-      });
     }
   }
+
+  renderHeader = () => {
+    return (
+      <Header>
+        <TouchableOpacity>
+          <Image source={Images.iconSideMenu} style={Styles.iconMenu} />
+        </TouchableOpacity>
+        <View style={Styles.contentHeaderInput}>
+          <Icon name="search" size={20} color={Colors.textGrey} />
+          <TextInput
+            style={Styles.textInput}
+            placeholder="Friends, events, food, etc."
+            placeholderTextColor={Colors.textGrey}
+          />
+        </View>
+        <View style={Styles.contentRightButton}>
+          <TouchableOpacity style={Styles.btnNavbar} onPress={this.toChat}>
+            <Image source={Images.iconChat} style={Styles.iconMenu} />
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.btnNavbar}>
+            <Image source={Images.iconNotif} style={Styles.iconMenu} />
+          </TouchableOpacity>
+        </View>
+      </Header>
+    );
+  };
 
   render() {
     try {
       console.log('HomeScreen ', this.props);
 
       return (
-        <View style={Styles.container}>
-          <CustomFlatList
-            data={this.props.data.data}
-            renderItem={({item, index}) => {
-              return <PostItem post={item} />;
-            }}
-          />
-          <TouchableOpacity style={Styles.btnFab}>
-            <Image source={Images.iconNewPost} style={Styles.iconNewPost} />
-          </TouchableOpacity>
-        </View>
+        <SafeAreaView style={Styles.containerWhite}>
+          {this.renderHeader()}
+          <View style={Styles.container}>
+            <CustomFlatList
+              data={this.props.data.data}
+              renderItem={({item, index}) => {
+                return <PostItem post={item} />;
+              }}
+            />
+            <TouchableOpacity style={Styles.btnFab}>
+              <Image source={Images.iconNewPost} style={Styles.iconNewPost} />
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
       );
     } catch (err) {
       console.log('ERROR Home.render ', err.message);
@@ -58,35 +96,7 @@ class HomeScreen extends PureComponent {
 
 HomeScreen.options = {
   topBar: {
-    leftButtons: [
-      {
-        id: 'sideMenu',
-        icon: require('../../Images/Icons/icon-side-menu.png'),
-        // fontSize: 14,
-        // showAsAction: 'always',
-        // color: 'grey',
-        // text: 'sidebar',
-      },
-    ],
-    leftButtonColor: 'grey',
-    rightButtons: [
-      {
-        id: 'notif',
-        icon: Images.iconNotif,
-      },
-      {
-        id: 'chat',
-        // text: 'chat',
-        icon: Images.iconChat,
-        // iconInsets: {
-        //   top: 58,
-        //   left: 58,
-        //   bottom: 58,
-        //   right: 58,
-        // },
-      },
-    ],
-    rightButtonColor: 'grey',
+    visible: false,
   },
   sideMenu: {
     id: 'sideMenu',

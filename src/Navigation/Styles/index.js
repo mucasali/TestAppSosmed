@@ -93,15 +93,15 @@ const DefaultOptions = {
       width: 260,
       height: 270,
       visible: false,
-      enabled: true
+      enabled: true,
     },
   },
   bottomTab: {
     fontFamily: Fonts.type.regular,
-    textColor: Colors.greyText,
-    selectedTextColor: Colors.primary,
-    selectedIconColor: Colors.primary,
-    iconColor: Colors.greyText, // Optional
+    textColor: Colors.textGrey,
+    selectedTextColor: Colors.textGreen,
+    selectedIconColor: Colors.textGreen,
+    iconColor: Colors.textGrey, // Optional
   },
   layout: {
     backgroundColor: 'white',
