@@ -9,7 +9,7 @@ import {
 import {Navigation} from 'react-native-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {CustomFlatList, Header, Input} from '../../Components';
+import {CustomFlatList, Header} from '../../Components';
 import PostItem from '../Post/Item';
 import Styles from './Styles';
 import {Images, Colors} from '../../Themes';

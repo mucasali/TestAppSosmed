@@ -2,7 +2,6 @@ import {Colors, Fonts} from '../../Themes';
 import Scale from '../../Transforms/Scale';
 
 const SIZE_BUTTON_FAB = Scale(55);
-const SIZE_ICON_FAB = Scale(24);
 
 const styles = {
   container: {
