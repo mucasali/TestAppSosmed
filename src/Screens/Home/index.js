@@ -78,6 +78,12 @@ HomeScreen.options = {
         id: 'chat',
         // text: 'chat',
         icon: Images.iconChat,
+        // iconInsets: {
+        //   top: 58,
+        //   left: 58,
+        //   bottom: 58,
+        //   right: 58,
+        // },
       },
     ],
     rightButtonColor: 'grey',
