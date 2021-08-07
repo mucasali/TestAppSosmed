@@ -10,4 +10,4 @@ export default scaleWidth => {
 
 export function ScaleHeight(scaleHeight) {
   return (scaleHeight * height) / DESIGN_HEIGHT;
-};
+}

@@ -46,6 +46,12 @@ const style = {
     fontWeight: '600',
     color: Colors.textBlack,
   },
+  regularBoldRed: {
+    fontSize: size.regular,
+    fontFamily: type.bold,
+    fontWeight: '600',
+    color: Colors.textRed,
+  },
   regularRegularBlack: {
     fontSize: size.regular,
     fontFamily: type.regular,
@@ -75,6 +81,12 @@ const style = {
     fontFamily: type.regular,
     fontWeight: '400',
     color: Colors.textGrey,
+  },
+  normalRegularGreen: {
+    fontSize: size.normal,
+    fontFamily: type.regular,
+    fontWeight: '400',
+    color: Colors.textGreen,
   },
   smallRegularGrey: {
     fontSize: size.small,

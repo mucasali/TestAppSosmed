@@ -29,22 +29,21 @@ class HomeScreen extends PureComponent {
     });
   };
 
-  navigationButtonPressed({buttonId}) {
-    if (buttonId === 'sideMenu') {
-      Navigation.mergeOptions(this.props.componentId, {
-        sideMenu: {
-          left: {
-            visible: true,
-          },
+  handleSideMenu = () => {
+    console.log('handleSideMenu ', this.props.componentId);
+    Navigation.mergeOptions(this.props.componentId, {
+      sideMenu: {
+        left: {
+          visible: true,
         },
-      });
-    }
-  }
+      },
+    });
+  };
 
   renderHeader = () => {
     return (
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.handleSideMenu}>
           <Image source={Images.iconSideMenu} style={Styles.iconMenu} />
         </TouchableOpacity>
         <View style={Styles.contentHeaderInput}>
@@ -97,15 +96,6 @@ class HomeScreen extends PureComponent {
 HomeScreen.options = {
   topBar: {
     visible: false,
-  },
-  sideMenu: {
-    id: 'sideMenu',
-    left: {
-      component: {
-        id: 'Drawer',
-        name: 'Navigation.drawer',
-      },
-    },
   },
 };
 

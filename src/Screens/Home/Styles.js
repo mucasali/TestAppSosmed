@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import {Colors, Fonts} from '../../Themes';
 import Scale from '../../Transforms/Scale';
 
@@ -43,7 +44,7 @@ const styles = {
   },
   btnFab: {
     position: 'absolute',
-    bottom: 20,
+    bottom: Platform.OS === 'ios' ? 20 : 60,
     right: 20,
   },
   iconNewPost: {

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import moment from 'moment';
+import {Navigation} from 'react-native-navigation';
 
 import {CustomFlatList, Header} from '../../Components';
 import Styles from './Styles';
@@ -17,14 +18,23 @@ import {Fonts, Images, Colors} from '../../Themes';
 import DUMMY_DATA from './DumyData.json';
 
 class ChatScreen extends PureComponent {
+  constructor(props) {
+    super(props);
+    Navigation.events().bindComponent(this);
+  }
+
+  back = () => {
+    Navigation.pop(this.props.componentId);
+  };
+
   renderHeader = () => {
     return (
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.back}>
           <Icon name="arrow-back" color="black" size={25} />
         </TouchableOpacity>
         <View style={{flex: 1, alignItems: 'center'}}>
-          <Text>Chat</Text>
+          <Text stye={Fonts.style.regularBoldBlack}>Chat</Text>
         </View>
         <View style={Styles.contentRightButton}>
           <TouchableOpacity style={Styles.btnNavbar} onPress={this.toChat}>

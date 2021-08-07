@@ -45,7 +45,8 @@ class UserStore {
           loadMore: data.page * data.limit < data.total,
         };
         console.log('meta ', meta);
-        const newData = params.page == 1 ? data.data : this.users.concat(data.data);
+        const newData =
+          params.page === 1 ? data.data : this.users.concat(data.data);
         runInAction(() => {
           this.user = {fetching: false, message: '', meta};
           this.users = newData;

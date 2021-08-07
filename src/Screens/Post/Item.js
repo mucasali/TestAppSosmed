@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {PureComponent} from 'react';
 import {View, TouchableOpacity, Text, Image, Modal} from 'react-native';
 import PropTypes from 'prop-types';
@@ -44,7 +45,7 @@ class PostItem extends PureComponent {
         <View style={{flex: 0.5}}>
           <Text style={Fonts.style.titleBoldBlack}>{title}</Text>
         </View>
-        <TouchableOpacity style={styles.btnAction} onPress={this.visibleModal} >
+        <TouchableOpacity style={styles.btnAction} onPress={this.visibleModal}>
           <Text style={Fonts.style.titleBoldGreen}>{textAction}</Text>
         </TouchableOpacity>
       </View>

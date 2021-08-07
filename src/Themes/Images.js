@@ -5,6 +5,12 @@ const images = {
   iconTabSharing: require('../Images/Icon_tabs/sharing.png'),
   iconTabServices: require('../Images/Icon_tabs/services.png'),
 
+  iconMenuInvoice: require('../Images/Icon_side_menu/icon_invoice.png'),
+  iconMenuDelivery: require('../Images/Icon_side_menu/icon_delivery.png'),
+  iconMenuBuilding: require('../Images/Icon_side_menu/icon_building.png'),
+  iconMenuSettings: require('../Images/Icon_side_menu/icon_settings.png'),
+
+  iconAlert: require('../Images/Icon_side_menu/icon_alert.png'),
   iconSideMenu: require('../Images/Icons/icon-side-menu.png'),
   iconChat: require('../Images/Icons/icon-chat.png'),
   iconNotif: require('../Images/Icons/icon-notif.png'),

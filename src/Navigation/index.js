@@ -18,72 +18,85 @@ Navigation.setDefaultOptions({
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
-      stack: {
-        id: 'MAIN_STACK',
-        children: [
-          {
-            bottomTabs: {
-              id: 'bottom_tab_home',
-              children: [
-                {
-                  component: {
-                    name: 'Home.home',
-                    options: {
-                      bottomTab: {
-                        text: 'Home', // Optional
-                        icon: Images.iconTabHome, // Optional
-                      },
-                    },
-                  },
-                },
-                {
-                  component: {
-                    name: 'Home.home',
-                    options: {
-                      bottomTab: {
-                        text: 'Residents',
-                        icon: Images.iconTabResidents,
-                      },
-                    },
-                  },
-                },
-                {
-                  component: {
-                    name: 'Home.home',
-                    options: {
-                      bottomTab: {
-                        text: 'Event',
-                        icon: Images.iconTabEvent,
-                      },
-                    },
-                  },
-                },
-                {
-                  component: {
-                    name: 'Home.home',
-                    options: {
-                      bottomTab: {
-                        text: 'Sharing',
-                        icon: Images.iconTabSharing,
-                      },
-                    },
-                  },
-                },
-                {
-                  component: {
-                    name: 'Home.home',
-                    options: {
-                      bottomTab: {
-                        text: 'Services',
-                        icon: Images.iconTabServices,
-                      },
-                    },
-                  },
-                },
-              ],
-            },
+      sideMenu: {
+        id: 'sideMenu',
+        left: {
+          visible: true,
+          component: {
+            id: 'Drawer',
+            name: 'Navigation.drawer',
           },
-        ],
+        },
+        openGestureMode: 'entireScreen',
+        center: {
+          stack: {
+            id: 'MAIN_STACK',
+            children: [
+              {
+                bottomTabs: {
+                  id: 'bottom_tab_home',
+                  children: [
+                    {
+                      component: {
+                        name: 'Home.home',
+                        options: {
+                          bottomTab: {
+                            text: 'Home', // Optional
+                            icon: Images.iconTabHome, // Optional
+                          },
+                        },
+                      },
+                    },
+                    {
+                      component: {
+                        name: 'Home.home',
+                        options: {
+                          bottomTab: {
+                            text: 'Residents',
+                            icon: Images.iconTabResidents,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      component: {
+                        name: 'Home.home',
+                        options: {
+                          bottomTab: {
+                            text: 'Event',
+                            icon: Images.iconTabEvent,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      component: {
+                        name: 'Home.home',
+                        options: {
+                          bottomTab: {
+                            text: 'Sharing',
+                            icon: Images.iconTabSharing,
+                          },
+                        },
+                      },
+                    },
+                    {
+                      component: {
+                        name: 'Home.home',
+                        options: {
+                          bottomTab: {
+                            text: 'Services',
+                            icon: Images.iconTabServices,
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
       },
     },
   });
